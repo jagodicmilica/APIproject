@@ -1,0 +1,133 @@
+@import "mixini";
+@import "vars";
+@include main;
+
+.main{
+    background-image: url('/img/background1.jpg');
+    background-size:cover;
+    height: 100vh;
+}
+
+.container{
+    padding: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow-y: scroll;
+}
+.title{
+    font-size: 1.8em;
+    
+}
+
+.search{
+    width: 50%;
+    margin: auto;
+    blockquote{
+        margin-top: 0.8em;
+        font-size: 1em;
+        opacity: 0.8;
+    }
+    .search-box{
+        display: flex;
+        align-items: stretch;
+        margin: 1em 0;
+        .search-input{
+            width:100%;
+            padding:0 0.8em;
+            font-size: 1.2em;
+            border: 1px solid $main-colour;
+            outline: none;
+            border-bottom-left-radius: 1.2em;
+            border-top-left-radius: 1.2em;
+            &::placeholder{
+                color: $main-colour;
+            }
+        }
+        .search-btn{
+            width:50px;
+            height: 50px;
+            font-size: 1.5em;
+            color: white;
+            background-color: $main-colour;
+            border: none;
+            border-top-right-radius: 1.2em;
+            border-bottom-right-radius: 1.2em;
+            
+            &:hover{
+                background-color: $hover-main;
+                
+            }
+
+        }
+    }
+}
+.meal-item{
+    border-radius: 2em;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgb(0, 0, 0, 0.8);
+        img{ 
+            width: 100%;
+        }
+    
+    .name{
+
+        padding: 1em 0.5em 1.5em;
+        
+        & h3{
+            
+            margin-bottom: 0.8em;
+        }
+        .recipe-btn{
+            
+            color: white;
+            text-decoration: none;
+            background-color: $main-colour;
+            padding:0.5em 0.8em;
+            border-radius: 2em;
+            
+            &:hover{
+                background-color: $hover-main;
+            }
+        }
+    }
+}
+.search-result{
+    
+    .title{
+        padding:0 0.5em 0.2em ;
+        margin: auto;
+        width: max-content;
+        border-bottom: 1px solid $main-colour;
+        margin-bottom: 1em;
+    }
+}
+@media screen and (min-width: 480px) {
+    
+    .meal-list{
+        padding: 2em;
+        .meal-item{
+            margin-bottom: 2em;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .search-result{
+        padding: 0 10%;
+    }
+    .meal-list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2em;
+    }
+}
+@media screen and (min-width: 980px) {
+    .meal-list{
+        
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2em;
+    }
+}
